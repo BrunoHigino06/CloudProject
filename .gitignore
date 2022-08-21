@@ -1,0 +1,6 @@
+
+.terraform/modules/modules.json
+*.exe
+.terraform.lock.hcl
+terraform.tfstate.backup
+terraform.tfstate
