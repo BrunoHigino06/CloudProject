@@ -1,4 +1,4 @@
-#VPC resource
+#VPC
 resource "aws_vpc" "main" {
   cidr_block = var.vpc.Network_CIDR
 
