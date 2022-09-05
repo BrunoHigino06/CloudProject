@@ -1,3 +1,4 @@
+#Network modules
 module "network" {
     source = ".\\network\\"
     providers = {
@@ -91,4 +92,14 @@ module "network" {
     DBSGEgress_to_port = var.DBSGEgress_to_port
     DBSGEgress_protocol = var.DBSGEgress_protocol
     DBSGEgress_cidr_blocks = var.DBSGEgress_cidr_blocks
+}
+
+#Infrastructure modules
+module "ecs_cluster" {
+  source = ".\\infrastructure\\"
+    providers = {
+        aws = aws.us
+    }
+
+    ClusterName = var.ClusterName
 }

@@ -251,3 +251,10 @@ variable "DBSGEgress_cidr_blocks" {
     type = list(string)
     description = "cidr_blocks for bastion security groups ingress rules"
 }
+#Infrastructure vars
+#ECS vars
+#Cluster vars
+variable "ClusterName" {
+    type = list(string)
+    description = "Name of the ECS cluster"
+}

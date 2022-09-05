@@ -86,3 +86,8 @@ DBSGEgress_from_port = ["0"]
 DBSGEgress_to_port = ["65535"]
 DBSGEgress_protocol = ["tcp"]
 DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
+
+#Infrastructure inputs
+#ECS inputs
+#Cluter inputs
+ClusterName = ["CloudProject"]
