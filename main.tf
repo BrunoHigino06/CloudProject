@@ -96,7 +96,7 @@ module "network" {
 
 #Infrastructure modules
 module "ecs_cluster" {
-  source = ".\\infrastructure\\"
+  source = ".\\infrastructure\\ecs_cluster"
     providers = {
         aws = aws.us
     }
