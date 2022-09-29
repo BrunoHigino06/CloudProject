@@ -110,7 +110,12 @@ module "load_balance" {
     #Target group inputs
     tg_name = var.tg_name
     tg_port = var.tg_port
-    vpc_id = module.network.aws_vpc.main.id
+    vpc_id = 
+
+
+    depends_on = [
+      module.network
+    ]
 }
 
 #ECS Cluster module
