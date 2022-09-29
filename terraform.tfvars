@@ -90,4 +90,4 @@ DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
 #Infrastructure inputs
 #ECS inputs
 #Cluter inputs
-ClusterName = ["CloudProject"]
+ClusterName = "CloudProject"

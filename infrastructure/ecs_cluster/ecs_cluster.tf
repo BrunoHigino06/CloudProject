@@ -1,7 +1,6 @@
 #ECS cluster
 resource "aws_ecs_cluster" "MainCluster" {
-  count = length(var.ClusterName)
-  name = var.ClusterName[count.index]
+  name = var.ClusterName
 
   setting {
     name  = "containerInsights"
@@ -9,7 +8,7 @@ resource "aws_ecs_cluster" "MainCluster" {
   }
 
   tags = {
-    name = var.ClusterName[count.index]
+    name = var.ClusterName
     environment = "production"
   }
 }

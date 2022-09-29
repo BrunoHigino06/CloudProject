@@ -102,4 +102,5 @@ module "ecs_cluster" {
     }
 
     ClusterName = var.ClusterName
+
 }
