@@ -10,3 +10,11 @@ resource "aws_lb" "blog_lb" {
     Environment = "production"
   }
 }
+
+resource "aws_lb_target_group" "blog_tg" {
+  name     = var.tg_name
+  port     = var.tg_port
+  protocol = "HTTP"
+  target_type = "ip"
+  vpc_id   = var.vpc_id
+}

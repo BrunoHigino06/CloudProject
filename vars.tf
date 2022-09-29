@@ -261,6 +261,15 @@ variable "lb_type" {
   description = "Type of the load balance"
 }
 
+#Target group vars
+variable "tg_name" {
+  description = "Name of the target group"
+}
+
+variable "tg_port" {
+  description = "Port of the target group"
+}
+
 #ECS vars
 #Cluster vars
 variable "ClusterName" {

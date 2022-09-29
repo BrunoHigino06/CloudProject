@@ -101,11 +101,16 @@ module "load_balance" {
     providers = {
         aws = aws.us
     }
-
+    #Load balance inputs
     lb_name = var.lb_name
     lb_type = var.lb_type
     lb_sg = [data.aws_security_group.ALBSG.id]
     lb_subnets = [data.aws_subnet.Alb1.id, data.aws_subnet.Alb2.id]
+
+    #Target group inputs
+    tg_name = var.tg_name
+    tg_port = var.tg_port
+    vpc_id = 
 }
 
 #ECS Cluster module

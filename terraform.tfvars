@@ -88,9 +88,13 @@ DBSGEgress_protocol = ["tcp"]
 DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
 
 #Infrastructure inputs
-#Load balance vars
+#Load balance inputs
 lb_name = "FrontEndlb"
 lb_type = "application"
+
+#Target group inputs
+tg_name = "Blog_tg"
+tg_port = "80"
 
 #ECS inputs
 #Cluter inputs
