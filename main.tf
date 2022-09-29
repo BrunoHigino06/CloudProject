@@ -95,6 +95,20 @@ module "network" {
 }
 
 #Infrastructure modules
+#Load balance module
+module "load_balance" {
+  source = ".\\infrastructure\\load_balance"
+    providers = {
+        aws = aws.us
+    }
+
+    lb_name = var.lb_name
+    lb_type = var.lb_type
+    lb_sg = [data.aws_security_group.ALBSG.id]
+    lb_subnets = [data.aws_subnet.Alb1.id, data.aws_subnet.Alb2.id]
+}
+
+#ECS Cluster module
 module "ecs_cluster" {
   source = ".\\infrastructure\\ecs_cluster"
     providers = {
@@ -102,5 +116,4 @@ module "ecs_cluster" {
     }
 
     ClusterName = var.ClusterName
-
 }

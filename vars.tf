@@ -252,8 +252,18 @@ variable "DBSGEgress_cidr_blocks" {
     description = "cidr_blocks for bastion security groups ingress rules"
 }
 #Infrastructure vars
+#Load balance vars
+variable "lb_name" {
+  description = "Name of the load balance"
+}
+
+variable "lb_type" {
+  description = "Type of the load balance"
+}
+
 #ECS vars
 #Cluster vars
 variable "ClusterName" {
     description = "Name of the ECS cluster"
 }
+

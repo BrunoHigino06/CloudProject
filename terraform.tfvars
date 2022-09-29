@@ -88,6 +88,10 @@ DBSGEgress_protocol = ["tcp"]
 DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
 
 #Infrastructure inputs
+#Load balance vars
+lb_name = "FrontEndlb"
+lb_type = "application"
+
 #ECS inputs
 #Cluter inputs
 ClusterName = "CloudProject"
