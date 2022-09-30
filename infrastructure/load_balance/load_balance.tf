@@ -61,4 +61,7 @@ resource "aws_lb_listener" "BackEnd" {
     type             = "forward"
     target_group_arn = aws_lb_target_group.blog_tg.arn
   }
+  depends_on = [
+    aws_acm_certificate.cert
+  ]
 }
