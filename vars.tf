@@ -252,6 +252,17 @@ variable "DBSGEgress_cidr_blocks" {
     description = "cidr_blocks for bastion security groups ingress rules"
 }
 #Infrastructure vars
+#Load balance Comum vars
+#Tag vars
+variable "Environment" {
+  description = "Default tag for define the environment"
+}
+
+variable "protocol" {
+  type = list(string)
+  description = "Types of protocols used on the load balance"
+}
+
 #Load balance vars
 variable "lb_name" {
   description = "Name of the load balance"

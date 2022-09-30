@@ -7,16 +7,30 @@ resource "aws_lb" "blog_lb" {
   subnets            = var.lb_subnets
 
   tags = {
-    Environment = "production"
+    Environment = var.Environment
   }
 }
 #Target Group
 resource "aws_lb_target_group" "blog_tg" {
   name     = var.tg_name
   port     = var.tg_port
-  protocol = "HTTP"
+  protocol = var.protocol[0]
   target_type = "ip"
   vpc_id   = var.vpc_id
 }
-#Load balance listener
-1
+#Load balance listeners
+resource "aws_lb_listener" "front_end" {
+  load_balancer_arn = aws_lb.blog_lb.arn
+  port              = "80"
+  protocol          = var.protocol[0]
+
+  default_action {
+    type = "redirect"
+
+    redirect {
+      port        = "443"
+      protocol    = var.protocol[1]
+      status_code = "HTTP_301"
+    }
+  }
+}

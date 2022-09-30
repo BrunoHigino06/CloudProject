@@ -101,6 +101,11 @@ module "load_balance" {
     providers = {
         aws = aws.us
     }
+    #Load balance comum inputs
+    #Tag inputs
+    Environment = var.Environment
+    protocol = var.protocol
+
     #Load balance inputs
     lb_name = var.lb_name
     lb_type = var.lb_type
