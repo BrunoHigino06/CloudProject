@@ -49,6 +49,9 @@ resource "aws_acm_certificate" "cert" {
   }
 }
 
+#Route53 certificate record
+
+
 #Listener backend forward to containers
 resource "aws_lb_listener" "BackEnd" {
   load_balancer_arn = aws_lb.blog_lb.arn
