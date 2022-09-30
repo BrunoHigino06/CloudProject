@@ -93,7 +93,7 @@ lb_name = "FrontEndlb"
 lb_type = "application"
 
 #Target group inputs
-tg_name = "Blog_tg"
+tg_name = "BlogTG"
 tg_port = "80"
 
 #ECS inputs
