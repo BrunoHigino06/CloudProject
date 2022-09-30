@@ -10,7 +10,7 @@ resource "aws_lb" "blog_lb" {
     Environment = "production"
   }
 }
-
+#Target Group
 resource "aws_lb_target_group" "blog_tg" {
   name     = var.tg_name
   port     = var.tg_port
@@ -18,3 +18,5 @@ resource "aws_lb_target_group" "blog_tg" {
   target_type = "ip"
   vpc_id   = var.vpc_id
 }
+#Load balance listener
+1
