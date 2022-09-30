@@ -110,7 +110,7 @@ module "load_balance" {
     #Target group inputs
     tg_name = var.tg_name
     tg_port = var.tg_port
-    vpc_id = 
+    vpc_id = module.network.vpc_id
 
 
     depends_on = [
