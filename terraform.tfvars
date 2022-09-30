@@ -88,10 +88,13 @@ DBSGEgress_protocol = ["tcp"]
 DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
 
 #Infrastructure inputs
-#Load balance comum inputs
-#Tag inputs
-Environment = "production"
+#Comum configuration inputs
 protocol = ["HTTP", "HTTPS"]
+port = ["80", "443"]
+
+#Load balance comum Tag inputs
+Environment = "production"
+
 
 #Load balance inputs
 lb_name = "FrontEndlb"
@@ -99,7 +102,11 @@ lb_type = "application"
 
 #Target group inputs
 tg_name = "BlogTG"
-tg_port = "80"
+target_type = "ip"
+
+#Public certificate inputs
+domain_name = "ggproject.link"
+validation_method = "DNS"
 
 #ECS inputs
 #Cluter inputs

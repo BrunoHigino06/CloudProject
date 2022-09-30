@@ -252,16 +252,22 @@ variable "DBSGEgress_cidr_blocks" {
     description = "cidr_blocks for bastion security groups ingress rules"
 }
 #Infrastructure vars
-#Load balance Comum vars
-#Tag vars
-variable "Environment" {
-  description = "Default tag for define the environment"
-}
-
+##Load balance Comum configuration vars
 variable "protocol" {
   type = list(string)
   description = "Types of protocols used on the load balance"
 }
+
+variable "port" {
+  type = list(string)
+  description = "Ports used on the load balance"
+}
+
+#Load balance Comum Tag vars
+variable "Environment" {
+  description = "Default tag for define the environment"
+}
+
 
 #Load balance vars
 variable "lb_name" {
@@ -277,8 +283,17 @@ variable "tg_name" {
   description = "Name of the target group"
 }
 
-variable "tg_port" {
-  description = "Port of the target group"
+variable "target_type" {
+  description = "Type of the target group"
+}
+
+#Public certificate vars
+variable "domain_name" {
+  description = "Domain name of the public certificate"
+}
+
+variable "validation_method" {
+  description = "Type of validation for the certificate"
 }
 
 #ECS vars

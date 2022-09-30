@@ -102,10 +102,13 @@ module "load_balance" {
         aws = aws.us
     }
     #Load balance comum inputs
-    #Tag inputs
-    Environment = var.Environment
+    #Load balance comum configuration inputs
     protocol = var.protocol
+    port = var.port
 
+    #Load balance comum tag inputs
+    Environment = var.Environment
+    
     #Load balance inputs
     lb_name = var.lb_name
     lb_type = var.lb_type
@@ -114,8 +117,12 @@ module "load_balance" {
 
     #Target group inputs
     tg_name = var.tg_name
-    tg_port = var.tg_port
     vpc_id = module.network.vpc_id
+    target_type = var.target_type
+
+    #Public certificate inputs
+    domain_name = var.domain_name
+    validation_method = var.validation_method
 
 
     depends_on = [
