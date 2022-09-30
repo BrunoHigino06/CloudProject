@@ -50,7 +50,7 @@ resource "aws_acm_certificate" "cert" {
 }
 
 #Route53 certificate record
-
+1
 
 #Listener backend forward to containers
 resource "aws_lb_listener" "BackEnd" {
