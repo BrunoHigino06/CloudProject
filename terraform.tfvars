@@ -92,11 +92,10 @@ DBSGEgress_cidr_blocks = ["0.0.0.0/0"]
 #Tag inputs
 Environment = "production"
 protocol = ["HTTP", "HTTPS"]
+
 #Load balance inputs
 lb_name = "FrontEndlb"
 lb_type = "application"
-
-
 
 #Target group inputs
 tg_name = "BlogTG"
