@@ -288,10 +288,6 @@ variable "target_type" {
 }
 
 #Public certificate vars
-variable "domain_name" {
-  description = "Domain name of the public certificate"
-}
-
 variable "validation_method" {
   description = "Type of validation for the certificate"
 }

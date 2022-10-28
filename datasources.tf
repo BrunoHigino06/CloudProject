@@ -1,3 +1,4 @@
+#Network module datasources
 #Subnet datasources
 #ALB Subnet datasource
 data "aws_subnet" "Alb1" {
@@ -31,4 +32,11 @@ data "aws_security_group" "ALBSG" {
     depends_on = [
       module.network
     ]
+}
+
+#Infrastructure modules datasources
+#Load balance module datasources
+data "aws_route53_zone" "main" {
+  name         = "cmcloudlab706.info."
+  private_zone = true
 }

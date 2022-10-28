@@ -121,7 +121,7 @@ module "load_balance" {
     target_type = var.target_type
 
     #Public certificate inputs
-    domain_name = var.domain_name
+    domain_name = data.aws_route53_zone.main.name
     validation_method = var.validation_method
 
 

@@ -105,7 +105,6 @@ tg_name = "BlogTG"
 target_type = "ip"
 
 #Public certificate inputs
-domain_name = "cmcloudlab1825.info"
 validation_method = "DNS"
 
 #ECS inputs
