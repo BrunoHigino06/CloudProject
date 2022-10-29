@@ -124,6 +124,13 @@ module "load_balance" {
     domain_name = data.aws_route53_zone.main.name
     validation_method = var.validation_method
 
+    #Route53 inputs
+    #Route53 records inputs
+    CertificateRecord = {
+      zone_id = data.aws_route53_zone.main.name
+      ttl = var.CertificateRecord.ttl
+    }
+
 
     depends_on = [
       module.network

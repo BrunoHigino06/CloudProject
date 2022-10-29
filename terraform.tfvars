@@ -107,6 +107,14 @@ target_type = "ip"
 #Public certificate inputs
 validation_method = "DNS"
 
+#Route53 inputs
+#Route53 records inputs
+CertificateRecord = {
+      ttl = 5
+    }
+
+
 #ECS inputs
 #Cluter inputs
 ClusterName = "CloudProject"
+

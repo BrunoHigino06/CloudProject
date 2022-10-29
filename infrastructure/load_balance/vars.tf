@@ -53,3 +53,14 @@ variable "validation_method" {
   description = "Type of validation for the certificate"
 }
 
+#Route53 vars
+#Route53 records
+variable "CertificateRecord" {
+    type = map(any)
+        default = {
+            zone_id  = ""
+            type = ""
+            ttl  = ""
+
+        }
+}
