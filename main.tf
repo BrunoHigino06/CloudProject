@@ -127,13 +127,14 @@ module "load_balance" {
     #Route53 inputs
     #Route53 records inputs
     CertificateRecord = {
-      zone_id = data.aws_route53_zone.main.name
+      zone_id = data.aws_route53_zone.main.zone_id
       ttl = var.CertificateRecord.ttl
     }
 
 
     depends_on = [
-      module.network
+      module.network,
+      data.aws_route53_zone.main
     ]
 }
 

@@ -65,11 +65,19 @@ resource "aws_route53_record" "CertificateRecord" {
   ttl             = var.CertificateRecord.ttl
   type            = each.value.type
   zone_id         = var.CertificateRecord.zone_id
+
+  depends_on = [
+    aws_acm_certificate.cert
+  ]
 }
 
-resource "aws_acm_certificate_validation" "example" {
+resource "aws_acm_certificate_validation" "CertificateValidantion" {
   certificate_arn         = aws_acm_certificate.cert.arn
   validation_record_fqdns = [for record in aws_route53_record.CertificateRecord : record.fqdn]
+  
+  depends_on = [
+    aws_acm_certificate.cert
+  ]
 }
 
 #Listener backend forward to containers
@@ -85,6 +93,8 @@ resource "aws_lb_listener" "BackEnd" {
     target_group_arn = aws_lb_target_group.blog_tg.arn
   }
   depends_on = [
-    aws_acm_certificate.cert
+    aws_acm_certificate.cert,
+    aws_route53_record.CertificateRecord,
+    aws_acm_certificate_validation.CertificateValidantion
   ]
 }
