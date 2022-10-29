@@ -252,7 +252,7 @@ variable "DBSGEgress_cidr_blocks" {
     description = "cidr_blocks for bastion security groups ingress rules"
 }
 #Infrastructure vars
-##Load balance Comum configuration vars
+#Comum configuration vars
 variable "protocol" {
   type = list(string)
   description = "Types of protocols used on the load balance"
@@ -263,7 +263,7 @@ variable "port" {
   description = "Ports used on the load balance"
 }
 
-#Load balance Comum Tag vars
+#Comum Tag vars
 variable "Environment" {
   description = "Default tag for define the environment"
 }
@@ -302,6 +302,8 @@ variable "CertificateRecord" {
             ttl  = ""
 
         }
+
+    description = "Record to register the public certificate on the route 53"
 }
 
 #ECS vars
@@ -310,3 +312,14 @@ variable "ClusterName" {
     description = "Name of the ECS cluster"
 }
 
+#BlogMain Service vars
+#BlogMainRepo vars
+variable "BlogmainRepo" {
+    type = map(any)
+        default = {
+            name  = ""
+            Environment = ""
+        }
+
+    description = "Variables for the main service blogmain repository"
+}

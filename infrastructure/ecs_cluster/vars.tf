@@ -1,5 +1,13 @@
 #ECS Cluster vars
 #Cluster vars
-variable "ClusterName" {
-    description = "Name of the ECS cluster"
+variable "MainCluster" {
+    type = map(any)
+        default = {
+            name  = ""
+            environment = ""
+            settingname = ""
+            settingvalue = ""
+        }
+
+    description = "Variables for the ECS cluster"
 }

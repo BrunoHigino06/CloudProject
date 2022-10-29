@@ -147,3 +147,18 @@ module "ecs_cluster" {
 
     ClusterName = var.ClusterName
 }
+
+#Services modules
+#BlogMain service module
+module "blogmain_service" {
+  source = ".\\infrastructure\\services\\blogmain"
+    providers = {
+        aws = aws.us
+    }
+
+  BlogmainRepo = {
+      name = var.BlogmainRepo.name
+      Environment = var.Environment
+    }
+    
+}

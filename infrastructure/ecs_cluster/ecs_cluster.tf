@@ -1,14 +1,14 @@
 #ECS cluster
 resource "aws_ecs_cluster" "MainCluster" {
-  name = var.ClusterName
+  name = var.MainCluster.name
 
   setting {
-    name  = "containerInsights"
-    value = "disabled"
+    name  = var.MainCluster.settingname
+    value = var.MainCluster.settingvalue
   }
 
   tags = {
-    name = var.ClusterName
-    environment = "production"
+    name = var.MainCluster.name
+    environment = var.MainCluster.environment
   }
 }

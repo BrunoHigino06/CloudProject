@@ -63,4 +63,6 @@ variable "CertificateRecord" {
             ttl  = ""
 
         }
+  description = "Record to register the public certificate on the route 53"
+  
 }
