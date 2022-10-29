@@ -37,6 +37,6 @@ data "aws_security_group" "ALBSG" {
 #Infrastructure modules datasources
 #Load balance module datasources
 data "aws_route53_zone" "main" {
-  name         = "cmcloudlab706.info."
+  name         = "cmcloudlab1799.info"
   private_zone = true
 }
