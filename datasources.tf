@@ -39,5 +39,4 @@ data "aws_security_group" "ALBSG" {
 data "aws_route53_zone" "main" {
   name         = "cmcloudlab706.info."
   private_zone = true
-  1
 }
