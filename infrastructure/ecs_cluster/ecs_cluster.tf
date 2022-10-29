@@ -4,7 +4,7 @@ resource "aws_ecs_cluster" "MainCluster" {
 
   setting {
     name  = "containerInsights"
-    value = "enabled"
+    value = "disabled"
   }
 
   tags = {
