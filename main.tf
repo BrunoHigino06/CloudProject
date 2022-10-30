@@ -153,6 +153,22 @@ module "ecs_cluster" {
     }
 }
 
+#Database module
+module "database" {
+  source = ".\\infrastructure\\database"
+    providers = {
+        aws = aws.us
+    }
+  #Database inputs
+  #Secret inputs
+  dbPasswordSecret = {
+      name = var.dbPasswordSecret.name
+      type = var.dbPasswordSecret.type
+      Environment = var.Environment
+    }
+  
+}
+
 #Services modules
 #BlogMain service module
 module "blogmain_service" {

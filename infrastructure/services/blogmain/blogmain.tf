@@ -10,4 +10,4 @@ resource "aws_ecr_repository" "BlogmainRepo" {
   }
 }
 
-docker build
+1 para fazer o docker build e preciso criar a database primeiro

@@ -122,7 +122,16 @@ MainCluster = {
   settingvalue = "disabled"
 }
 
+#Database inputs
+#Secret inputs
+dbPasswordSecret = {
+  name = "dbpassword"
+  type = "String"
+}
+
 #Repository inputs
 BlogmainRepo = {
   name = "BlogMain"
 }
+
+

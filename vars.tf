@@ -318,6 +318,19 @@ variable "MainCluster" {
 
     description = "Variables for the ECS cluster"
 }
+
+#Database vars
+#Secrets vars
+variable "dbPasswordSecret" {
+    type = map(any)
+        default = {
+            name  = ""
+            type = ""
+        }
+
+    description = "Variables for the main service blogmain repository"
+}
+
 #BlogMain Service vars
 #BlogMainRepo vars
 variable "BlogmainRepo" {
