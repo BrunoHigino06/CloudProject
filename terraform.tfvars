@@ -116,5 +116,13 @@ CertificateRecord = {
 
 #ECS inputs
 #Cluter inputs
-ClusterName = "CloudProject"
+MainCluster = {
+  name = "CloudProject"
+  settingname = "containerInsights"
+  settingvalue = "disabled"
+}
 
+#Repository inputs
+BlogmainRepo = {
+  name = "BlogMain"
+}

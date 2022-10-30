@@ -144,8 +144,13 @@ module "ecs_cluster" {
     providers = {
         aws = aws.us
     }
-
-    ClusterName = var.ClusterName
+    #Cluster inputs
+    MainCluster = {
+      name = var.MainCluster.name
+      environment = var.Environment
+      settingname = var.MainCluster.settingname
+      settingvalue = var.MainCluster.settingvalue
+    }
 }
 
 #Services modules
@@ -155,10 +160,10 @@ module "blogmain_service" {
     providers = {
         aws = aws.us
     }
-
+  #Repository inputs
   BlogmainRepo = {
       name = var.BlogmainRepo.name
       Environment = var.Environment
     }
-    
+  
 }

@@ -308,17 +308,22 @@ variable "CertificateRecord" {
 
 #ECS vars
 #Cluster vars
-variable "ClusterName" {
-    description = "Name of the ECS cluster"
-}
+variable "MainCluster" {
+    type = map(any)
+        default = {
+            name  = ""
+            settingname = ""
+            settingvalue = ""
+        }
 
+    description = "Variables for the ECS cluster"
+}
 #BlogMain Service vars
 #BlogMainRepo vars
 variable "BlogmainRepo" {
     type = map(any)
         default = {
             name  = ""
-            Environment = ""
         }
 
     description = "Variables for the main service blogmain repository"
