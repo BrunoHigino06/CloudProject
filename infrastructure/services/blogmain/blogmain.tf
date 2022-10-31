@@ -9,5 +9,3 @@ resource "aws_ecr_repository" "BlogmainRepo" {
     "Environment" = var.BlogmainRepo.Environment
   }
 }
-
-1 para fazer o docker build e preciso criar a database primeiro
