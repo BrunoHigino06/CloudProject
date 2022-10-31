@@ -127,13 +127,13 @@ MainCluster = {
 #DB Password Inputs
 dbPasswordSecret = {
   name = "blogdb_password"
-  type = "string"
+  type = "StringList"
 }
 
 #DB username Inputs
 dbusernameSecret = {
   name = "blogdb_username"
-  type = "string"
+  type = "String"
 }
 
 #Database instance vars
