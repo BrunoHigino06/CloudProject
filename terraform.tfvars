@@ -124,14 +124,30 @@ MainCluster = {
 
 #Database inputs
 #Secret inputs
+#DB Password Inputs
 dbPasswordSecret = {
-  name = "dbpassword"
-  type = "String"
+  name = "blogdb_password"
+  type = "string"
+}
+
+#DB username Inputs
+dbusernameSecret = {
+  name = "blogdb_username"
+  type = "string"
+}
+
+#Database instance vars
+blogDB = {
+  allocated_storage = 10
+  db_name = "blogdb"
+  engine = "mysql"
+  engine_version = "8.0.30"
+  instance_class = "db.t3.micro"
+  parameter_group_name = "default.mysql8.0"
+  storage_type = "gp2"
 }
 
 #Repository inputs
 BlogmainRepo = {
   name = "BlogMain"
 }
-
-

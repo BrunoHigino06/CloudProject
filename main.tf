@@ -161,12 +161,32 @@ module "database" {
     }
   #Database inputs
   #Secret inputs
+  #DB Password Inputs
   dbPasswordSecret = {
       name = var.dbPasswordSecret.name
       type = var.dbPasswordSecret.type
       Environment = var.Environment
-    }
+  }
+  #DB username Inputs
+  dbusernameSecret = {
+      name = var.dbusernameSecret.name
+      type = var.dbusernameSecret.type
+      Environment = var.Environment
+  }
   
+  #Database instance vars
+  blogDB = {
+      allocated_storage = var.blogDB.allocated_storage
+      db_name = var.blogDB.db_name
+      engine = var.blogDB.engine
+      engine_version = var.blogDB.engine_version
+      instance_class = var.blogDB.instance_class
+      parameter_group_name = var.blogDB.parameter_group_name
+      storage_type = var.blogDB.storage_type
+      Environment = var.Environment
+  }
+
+
 }
 
 #Services modules
