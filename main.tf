@@ -183,6 +183,8 @@ module "database" {
       instance_class = var.blogDB.instance_class
       parameter_group_name = var.blogDB.parameter_group_name
       storage_type = var.blogDB.storage_type
+      identifier = var.blogDB.db_name
+      Name = var.blogDB.db_name
       Environment = var.Environment
   }
 

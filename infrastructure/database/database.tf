@@ -44,10 +44,12 @@ resource "aws_db_instance" "blogDB" {
   password             = aws_ssm_parameter.dbPasswordSecret.value
   parameter_group_name = var.blogDB.parameter_group_name
   storage_type         = var.blogDB.storage_type
+  identifier           = var.blogDB.identifier
   skip_final_snapshot  = true
 
 
   tags = {
+    "Name" = var.blogDB.Name
     "Environment" = var.blogDB.Environment
   }
 }

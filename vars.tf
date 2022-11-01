@@ -354,6 +354,8 @@ variable "blogDB" {
             instance_class = ""
             parameter_group_name = ""
             storage_type = ""
+            identifier = ""
+            Name = ""
         }
 
     description = "Database configurations"
