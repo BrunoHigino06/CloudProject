@@ -127,7 +127,7 @@ MainCluster = {
 #DB Password Inputs
 dbPasswordSecret = {
   name = "blogdb_password"
-  type = "StringList"
+  type = "String"
 }
 
 #DB username Inputs
@@ -149,5 +149,5 @@ blogDB = {
 
 #Repository inputs
 BlogmainRepo = {
-  name = "BlogMain"
+  name = "blogmain"
 }

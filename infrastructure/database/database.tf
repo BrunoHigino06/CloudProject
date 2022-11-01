@@ -6,8 +6,8 @@ resource "random_password" "dbpassword" {
 }
 
 resource "random_string" "dbpusername" {
-  length           = 16
-  special          = true
+  length           = 8
+  special          = false
   override_special = "/@£$"
 }
 
@@ -15,14 +15,12 @@ resource "random_string" "dbpusername" {
 resource "aws_ssm_parameter" "dbPasswordSecret" {
   name  = var.dbPasswordSecret.name
   type  = var.dbPasswordSecret.type
-  value = ("${random_password.dbpassword.result},${random_string.dbpusername.result}")
+  value = random_password.dbpassword.result
 
   tags = {
     "Environment" = var.dbPasswordSecret.Environment
   }
 }
-
-1 checar se é possivel usar um ssm parameter para as duas strings como stringlist, caso não user listvars como criação
 
 #Secret to achive the db username
 resource "aws_ssm_parameter" "dbusernameSecret" {
